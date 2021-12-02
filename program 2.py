@@ -15,6 +15,9 @@ print(" ")
 
 password = input("Enter your password here: ")
 
+if len(password) < 15:
+    print("a. Greater than 15 letters")
+
 
 
 

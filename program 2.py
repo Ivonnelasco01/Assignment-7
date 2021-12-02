@@ -6,6 +6,8 @@
 #d. Have at least one special char
 
 
+#value
+
 print(" Password validator ")
 print("The password is valid if all criteria are met:")
 print("a. Greater than 15 letters")
@@ -14,33 +16,30 @@ print("c. Have at least one number")
 print("d. Have at least one special char")
 print(" ")
 
-password = input("Enter your password here: ")
-uppercase = False
-number = False
-special = False
+character = 0
+uppercase = 0
+number = 0
+special = 0
 
-
-for char in password:
-    if char in "ABCDEFGHIJKLMNOPQRSTUVWXXYZ":
-        uppercase = True
-    elif char in "0123456789":
-        number = True
-    elif char in "~!#$%^&*()_+=-:;,.<>?/;'[]{}":
-        special = True
-
-if len(password) < 15:
-    print("a. Greater than 15 letters")
-
-if uppercase == False:
-    print("b. Have at least one capital letter")
-
-if number == False:
-    print("c. Have at least one number")
-
-if special == False:
-    print("d. Have at least one special character")
-
-
-
-
-
+while True:
+    password = input("Enter your password here: ")
+    for char in password:
+        if len(password) > 15:
+            character += 1
+        if char in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            uppercase += 1
+        if char in "0123456789":
+            number += 1
+        if char in "!@#$%^&*()_+-=,./;'[]<>?:{}\|":
+            special += 1
+    if character == 0:
+        print("Password must be greater than 15 characters")
+    elif uppercase == 0:
+        print("Password must have at least one capital letter")
+    elif number == 0:
+        print("Have at least one number")
+    elif special == 0:
+        print("Have at least one special character")
+    else:
+        print("Password is valid")
+        break

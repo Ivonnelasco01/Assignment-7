@@ -1,8 +1,10 @@
+
 # enter password
 #a. Greater than 15 letters
 #b. Have at least one capital letter
 #c. Have at least one number
 #d. Have at least one special char
+
 import re
 
 print(" Password validator ")
@@ -14,6 +16,14 @@ print("d. Have at least one special char")
 print(" ")
 
 password = input("Enter your password here: ")
+uppercase = False
+
+for char in password:
+    if char in "ABCDEFGHIJKLMNOPQRSTUVWXXYZ":
+        uppercase = True
+
+if uppercase == False:
+    print("b. Have at least one capital letter")
 
 if len(password) < 15:
     print("a. Greater than 15 letters")

@@ -3,6 +3,7 @@
 #b. Have at least one capital letter
 #c. Have at least one number
 #d. Have at least one special char
+import re
 
 print(" Password validator ")
 print("The password is valid if all criteria are met:")
@@ -12,12 +13,7 @@ print("c. Have at least one number")
 print("d. Have at least one special char")
 print(" ")
 
-def password_validator():
-
-
-user_password = input("Enter your password here: ")
-print(password_validator())
-
+password = input("Enter your password here: ")
 
 
 
